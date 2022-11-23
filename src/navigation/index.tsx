@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamsList} from './typeScreen';
-import {SplashScreen} from '../screens';
+import {ComponentsScreen, SplashScreen} from '../screens';
 
 const RootStack = createNativeStackNavigator<RootStackParamsList>();
 
@@ -10,10 +10,12 @@ const RootNavigator = () => {
 
   return (
     <Navigator
+      initialRouteName="Components"
       screenOptions={{
         headerShown: false,
       }}>
       <Screen name="Splash" component={SplashScreen} />
+      <Screen name="Components" component={ComponentsScreen} />
     </Navigator>
   );
 };

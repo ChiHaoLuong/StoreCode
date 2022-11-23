@@ -8,7 +8,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar
         translucent
-        barStyle="light-content"
+        barStyle="dark-content"
         backgroundColor="transparent"
       />
       <RootNavigator />
