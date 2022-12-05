@@ -1,4 +1,5 @@
 import {
+  Button,
   StyleProp,
   Text,
   TextStyle,
@@ -97,6 +98,7 @@ const CustomOptionAlert = (props: CustomOptionAlertProps) => {
           <Text style={[styles.subTitle, subTitleStyle]}>{subTitle}</Text>
         )}
         {_renderBtnsContainer()}
+        <Button title="saveImage" />
       </View>
     </Modal>
   );
