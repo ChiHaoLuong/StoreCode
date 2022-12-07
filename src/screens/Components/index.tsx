@@ -1,7 +1,11 @@
 import {Button, ScrollView, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 // import {SafeAreaView} from 'react-native-safe-area-context';
-import {CustomOptionAlert, SaveComponentImage} from '../../components';
+import {
+  CustomHeader,
+  CustomOptionAlert,
+  SaveComponentImage,
+} from '../../components';
 
 const ComponentsScreen = () => {
   const [optionAlertState, setOptionAlertState] = useState<{
@@ -44,6 +48,7 @@ const ComponentsScreen = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.root}>
+      <CustomHeader />
       <Button title="Mint petto" onPress={onMintPettoOpenModal} />
       <Button title="Transform petto" onPress={onTransformOpenModal} />
       <CustomOptionAlert
@@ -66,7 +71,5 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
