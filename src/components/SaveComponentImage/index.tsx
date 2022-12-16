@@ -14,7 +14,7 @@ const SaveComponentImage = () => {
         quality: 0.8,
       });
       // cameraroll saves image
-      CameraRoll.save(uri, {
+      await CameraRoll.save(uri, {
         type: 'photo',
       });
       Alert.alert(

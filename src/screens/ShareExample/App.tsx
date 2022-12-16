@@ -16,6 +16,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 import Share from 'react-native-share';
 
@@ -337,7 +338,7 @@ const ShareExample = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.welcome}>Welcome to React Native Share Example!</Text>
       <View style={styles.optionsRow}>
         <View style={styles.button}>
@@ -417,7 +418,7 @@ const ShareExample = () => {
         <Text style={styles.resultTitle}>Result</Text>
         <Text style={styles.result}>{result}</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

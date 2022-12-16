@@ -6,6 +6,7 @@ import {
   CustomOptionAlert,
   SaveComponentImage,
 } from '../../components';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const ComponentsScreen = () => {
   const [optionAlertState, setOptionAlertState] = useState<{
@@ -47,21 +48,23 @@ const ComponentsScreen = () => {
   };
 
   return (
-    <ScrollView contentContainerStyle={styles.root}>
-      <CustomHeader />
-      <Button title="Mint petto" onPress={onMintPettoOpenModal} />
-      <Button title="Transform petto" onPress={onTransformOpenModal} />
-      <CustomOptionAlert
-        onClose={onCloseModal}
-        title={optionAlertState.title}
-        isVisible={optionAlertState.isVisible}
-        positiveBtnTitle={optionAlertState.positiveTitle}
-        positiveBtnPress={optionAlertState.positivePress}
-        negativeBtnPress={onCloseModal}
-        negativeBtnTitle={optionAlertState.negativeTitle}
-      />
-      <SaveComponentImage />
-    </ScrollView>
+    <SafeAreaView style={styles.root}>
+      <ScrollView contentContainerStyle={styles.root}>
+        <CustomHeader />
+        <Button title="Mint petto" onPress={onMintPettoOpenModal} />
+        <Button title="Transform petto" onPress={onTransformOpenModal} />
+        <CustomOptionAlert
+          onClose={onCloseModal}
+          title={optionAlertState.title}
+          isVisible={optionAlertState.isVisible}
+          positiveBtnTitle={optionAlertState.positiveTitle}
+          positiveBtnPress={optionAlertState.positivePress}
+          negativeBtnPress={onCloseModal}
+          negativeBtnTitle={optionAlertState.negativeTitle}
+        />
+        <SaveComponentImage />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
