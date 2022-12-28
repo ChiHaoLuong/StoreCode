@@ -10,7 +10,7 @@ const RootNavigator = () => {
 
   return (
     <Navigator
-      initialRouteName="ShareExample"
+      initialRouteName="Components"
       screenOptions={{
         headerShown: false,
       }}>

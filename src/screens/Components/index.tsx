@@ -1,12 +1,12 @@
-import {Button, ScrollView, StyleSheet} from 'react-native';
+import {Button, ScrollView, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
-// import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   CustomHeader,
   CustomOptionAlert,
+  TimePicker,
   SaveComponentImage,
 } from '../../components';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const ComponentsScreen = () => {
   const [optionAlertState, setOptionAlertState] = useState<{
@@ -19,6 +19,7 @@ const ComponentsScreen = () => {
     title: '',
     isVisible: false,
   });
+  const [pickerVisible, setPickerVisible] = useState<boolean>(true);
 
   const onCloseModal = () => {
     setOptionAlertState({
@@ -48,9 +49,10 @@ const ComponentsScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.root}>
+    <View style={styles.root}>
       <ScrollView contentContainerStyle={styles.root}>
         <CustomHeader />
+        <View style={{height: useSafeAreaInsets().top + 64}} />
         <Button title="Mint petto" onPress={onMintPettoOpenModal} />
         <Button title="Transform petto" onPress={onTransformOpenModal} />
         <CustomOptionAlert
@@ -63,8 +65,9 @@ const ComponentsScreen = () => {
           negativeBtnTitle={optionAlertState.negativeTitle}
         />
         <SaveComponentImage />
+        <TimePicker isVisible={pickerVisible} setIsVisible={setPickerVisible} />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

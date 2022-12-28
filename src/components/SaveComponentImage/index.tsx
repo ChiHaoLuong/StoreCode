@@ -3,6 +3,7 @@ import React, {useRef} from 'react';
 import {styles} from './styles';
 import {CameraRoll} from '@react-native-camera-roll/camera-roll';
 import {captureRef} from 'react-native-view-shot';
+import Share from 'react-native-share';
 
 const SaveComponentImage = () => {
   const viewRef = useRef(null);
@@ -16,6 +17,10 @@ const SaveComponentImage = () => {
       // cameraroll saves image
       await CameraRoll.save(uri, {
         type: 'photo',
+      });
+      await Share.open({
+        message: 'Share',
+        url: uri,
       });
       Alert.alert(
         '',

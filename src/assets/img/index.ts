@@ -12,4 +12,5 @@ export default {
   iconNotify: require('./icon-notify.png'),
   iconLogout: require('./icon-logout.png'),
   iconProfile: require('./icon-profile.png'),
+  iconDropDown: require('./drop-down-arrow.png'),
 };
